@@ -6,32 +6,9 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<context:property-placeholder location="classpath:profesori.properties"/>
-	
-	<bean id = "profaPython" 
-			class="profesor.PythonProfesor" 
-			scope="singleton" 
-			init-method="initMetoda"
-			destroy-method="destroyMetoda">
-		<constructor-arg ref = "predmetPython"/> <!-- constructor injection -->
-	</bean>
-	
-	<bean id = "profaJave" class="profesor.JavaProfesor">
-		<property name="ime" value="${ime.profa.java}"/>
-		<property name="predmet" ref="predmetJava"/><!-- ovo je setter injection -->
-	</bean>
-	
-	<bean id = "profaJave2" class="profesor.JavaProfesor" scope="singleton">
-		<property name="ime" value="${ime.profa2.java}"/>
-		<property name="predmet" ref="predmetJava"/><!-- ovo je setter injection -->
-	</bean>
-	
-	<bean id = "predmetPython" class="profesor.Predmet">
-		<property name="nazivPredmeta" value="Python"/>
-	</bean>
-	
-	<bean id = "predmetJava" class="profesor.Predmet">
-		<property name="nazivPredmeta" value="Java"/>
-	</bean>
+	<context:component-scan base-package="profesor"/>
+
+
 	
 
 </beans>
