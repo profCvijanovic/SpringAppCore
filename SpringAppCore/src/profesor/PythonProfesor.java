@@ -17,5 +17,13 @@ public class PythonProfesor implements Profesor {
 	public void getPredmetKojiPredajem() {
 		predmet.dajMiPredmet();
 	}
+	
+	public void initMetoda() {
+		System.out.println("Preuzmi jezik...");
+	}
+	
+	public void destroyMetoda() {	
+		System.out.println("Zatvaram sve konekcije...");
+	}
 
 }
